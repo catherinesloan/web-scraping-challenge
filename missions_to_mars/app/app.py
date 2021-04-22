@@ -1,12 +1,12 @@
 # STEPS TAKEN ... 
-# Creating a route called /scrape that will import the scrape_mars.py script and call the scrape function.
-# Storing the return value in Mongo as a Python dictionary.
-# Creating a root route / that will query the Mongo database and pass the mars data into an HTML template to display the data.
+# Creating a route called /scrape that will import the scrape_mars.py script and call the scrape function
+# Storing the return value in Mongo as a Python dictionary
+# Creating a root route / that will query the Mongo database and pass the mars data into an HTML template to display the data
 
 ## Taken from class 12.3 activity 10, ## commenting on any changes made
 
 # from flask import Flask, render_template, redirect
-from flask import Flask, render_template, redirect
+from flask import Flask, redirect, render_template
 from flask_pymongo import PyMongo
 ## changing to scrape_mars as that is the name of my python file
 import scrape_mars
@@ -15,7 +15,7 @@ import scrape_mars
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-## should it be mars_app??
+## mars_app
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
 
@@ -30,7 +30,7 @@ def home():
     # Return template and data
     # This is telling it to find a folder called template, and then a file called index.html, folder structure is important
     ## data_mars is what I'm going to call in index.html, this is the dictionary so will use dot notation look for {{ }}
-    return render_templates("index.html", data_mars = mars)
+    return render_template("index.html", data_mars = mars)
 
 
 # Route that will trigger the scrape function
@@ -43,6 +43,7 @@ def scrape():
 
     # Update the Mongo database using update and upsert=True
     ## Changing to mars_data
+    ## Would usually pass something in to {} but we only have the one object in the mongodb we've created
     mongo.db.collection.update({}, mars_data, upsert=True)
 
     # Redirect back to home page

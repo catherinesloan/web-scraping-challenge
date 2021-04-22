@@ -10,12 +10,12 @@ import pandas as pd
 
 
 executable_path = {'executable_path': ChromeDriverManager().install()}
-browser = Browser('chrome', **executable_path, headless=False)
+# browser = Browser('chrome', **executable_path, headless=False)
 
 #  this will execute all of the scraping code from below to return Python dictionary, 'data', containing all of the scraped data.
 def scrape():
-    browser = Browser('chrome', **executable_path, headless=False)
-    news_title, news_p = mars_title_paragraph(broswer)
+    browser = Browser('chrome', **executable_path, headless=True)
+    news_title, news_p = mars_title_paragraph(browser)
 
     data = {
         "news_title": news_title,

@@ -19,7 +19,7 @@
       <div class="jumbotron text-center">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href=" " role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
 
       <!-- Add section for Mars News -->
@@ -52,7 +52,8 @@
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
             <h4>Mars Facts</h4>
-            {{data_mars.facts}}
+            <!-- html needs to know that the data is safe to use -->
+            {{data_mars.facts | safe}}
           </div>
         </div>
       </div>
