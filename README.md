@@ -2,9 +2,9 @@
 
 ## Mission to Mars
 
-**If cloning this repository ...
-**1. Activate local environment in terminal
-**2. Run 'python app.py' 
+**If cloning this repository ...**
+**1. Activate local environment in terminal**
+**2. Run 'python app.py'**
 **3. Follow local host link to view the app in your browser**
 
 ## Task:
