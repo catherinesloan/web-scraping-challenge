@@ -18,7 +18,9 @@ To build a web application that scrapes various websites for data related to the
    - Requests/Splinter
 
 **Part 2 - MongoDB and Flask Application**
+
 Used MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped in Part 1
+
 1. Converted the Jupyter notebook into a Python script, [scrape_mars.py](https://github.com/catherinesloan/web-scraping-challenge/blob/main/missions_to_mars/app/scrape_mars.py) 
 2. Function called 'scrape' executes all of the scraping code and returns one Python dictionary containing all of the scraped data
 3. Created a route called '/scrape' that imports the scrape_mars.py script and calls the scrape function
